@@ -19,6 +19,23 @@ console.log(isWorkingAgePerson(88));
 
 console.groupEnd();
 
+console.group("Task 1*");
+
+function checkNumb(numb) {
+  for (let i = 2; i < numb; i++) {
+    if (numb % i === 0) {
+      return `Число ${numb} составное`;
+    } else {
+      return `Число ${numb} простое`;
+    }
+  }
+}
+
+console.log(checkNumb(6));
+console.log(checkNumb(11));
+
+console.groupEnd();
+
 console.group("Task 2");
 
 function checkMultiplicity(number1, number2) {
