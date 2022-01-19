@@ -3,14 +3,10 @@ console.group("Task 0");
 /**
  * Work age check
  * @param {Number} age user age
- * @returns Boolean
+ * @returns {Boolean}
  */
 function isWorkingAgePerson(age) {
-  if (age >= 16 && age <= 65) {
-    return true;
-  } else {
-    return false;
-  }
+  return age >= 16 && age <= 65;
 }
 
 console.log(isWorkingAgePerson(20));
@@ -21,29 +17,24 @@ console.groupEnd();
 
 console.group("Task 1*");
 
-function checkNumb(numb) {
-  for (let i = 2; i < numb; i++) {
-    if (numb % i === 0) {
-      return `Число ${numb} составное`;
+function getPrimeNumb(numb) {
+  for (let i = 2; i <= numb; i++) {
+    if (numb === 2) {
+      return true;
+    } else if ((numb / 2) % i === 0) {
+      return false;
     } else {
-      return `Число ${numb} простое`;
+      return true;
     }
   }
 }
-
-console.log(checkNumb(6));
-console.log(checkNumb(11));
 
 console.groupEnd();
 
 console.group("Task 2");
 
 function checkMultiplicity(number1, number2) {
-  if (number1 % number2 === 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return number1 % number2 === 0 ? true : false;
 }
 
 console.log(checkMultiplicity(25, 5));
@@ -56,11 +47,7 @@ console.groupEnd();
 console.group("Task 3");
 
 const triangleCheck = function (a, b, c) {
-  if (a + b > c && a + c > b && b + c > a) {
-    return true;
-  } else {
-    return false;
-  }
+  return a + b > c && a + c > b && b + c > a ? true : false;
 };
 
 console.log(triangleCheck(10, 10, 10));
