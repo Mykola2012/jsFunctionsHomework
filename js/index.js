@@ -23,7 +23,7 @@ function isPrimeNumb(numb) {
   while (i <= rootOfNumb) {
     if (numb % i++ === 0) return false;
   }
-  return numb !== 0;
+  return numb > 1;
 }
 
 console.log(isPrimeNumb(2));
