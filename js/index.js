@@ -17,24 +17,27 @@ console.groupEnd();
 
 console.group("Task 1*");
 
-function getPrimeNumb(numb) {
-  for (let i = 2; i <= numb; i++) {
-    if (numb === 2) {
-      return true;
-    } else if ((numb / 2) % i === 0) {
-      return false;
-    } else {
-      return true;
-    }
+function isPrimeNumb(numb) {
+  let i = 2;
+  const rootOfNumb = Math.sqrt(numb);
+  while (i <= rootOfNumb) {
+    if (numb % i++ === 0) return false;
   }
+  return numb !== 0;
 }
+
+console.log(isPrimeNumb(2));
+console.log(isPrimeNumb(3));
+console.log(isPrimeNumb(6));
+console.log(isPrimeNumb(9));
+console.log(isPrimeNumb(37));
 
 console.groupEnd();
 
 console.group("Task 2");
 
 function checkMultiplicity(number1, number2) {
-  return number1 % number2 === 0 ? true : false;
+  return number1 % number2 === 0;
 }
 
 console.log(checkMultiplicity(25, 5));
@@ -47,7 +50,7 @@ console.groupEnd();
 console.group("Task 3");
 
 const triangleCheck = function (a, b, c) {
-  return a + b > c && a + c > b && b + c > a ? true : false;
+  return a + b > c && a + c > b && b + c > a;
 };
 
 console.log(triangleCheck(10, 10, 10));
